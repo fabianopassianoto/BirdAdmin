@@ -1,0 +1,16 @@
+program PBirdAdmin;
+
+uses
+  Forms,
+  UMain in 'UMain.pas' {FrmPrincipal},
+  UBd in 'UBd.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFrmPrincipal, FrmPrincipal);
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.
