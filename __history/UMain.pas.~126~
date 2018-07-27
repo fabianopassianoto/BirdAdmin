@@ -126,6 +126,7 @@ type
     TvChart: TcxGridChartView;
     Serie1: TcxGridChartSeries;
     Serie2: TcxGridChartSeries;
+    Serie3: TcxGridChartSeries;
     procedure BtnConectarClick(Sender: TObject);
     procedure TimerTimer(Sender: TObject);
     procedure BtnSairClick(Sender: TObject);
@@ -172,8 +173,9 @@ begin
    Series2.AddY(StrToCurrDef(QryTopMINTOP.AsString,0),FormatDateTime('hh:nn:ss', Now),clGreen);
    SerieUsuario.AddY(StrToCurrDef(QryTopUSUARIOS.AsString,0),FormatDateTime('hh:nn:ss', Now),clGreen);
 
-   Serie1.AddValue(StrToCurrDef(QryTopMAXTOP.AsString,0));
-   Serie2.AddValue(StrToCurrDef(QryTopMINTOP.AsString,0));
+   Serie1.AddValue(QryTopMAXTOP.AsInteger);
+   Serie2.AddValue(QryTopMINTOP.AsInteger);
+   Serie3.AddValue(QryTopMAXTOP.AsInteger);
 
 end;
 

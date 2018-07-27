@@ -660,7 +660,7 @@ object FrmPrincipal: TFrmPrincipal
       Top = 1
       Width = 968
       Height = 421
-      ActivePage = tsResumo
+      ActivePage = ts1
       Align = alClient
       TabOrder = 0
       object tsConexoes: TTabSheet
@@ -1390,6 +1390,7 @@ object FrmPrincipal: TFrmPrincipal
           LeftAxis.MinimumOffset = 20
           LeftAxis.Title.Caption = 'Transa'#231#245'es'
           MaxPointsPerPage = 10000
+          RightAxis.Grid.Style = psClear
           View3DOptions.Elevation = 350
           View3DOptions.FontZoom = 70
           View3DOptions.Zoom = 97
@@ -1413,6 +1414,8 @@ object FrmPrincipal: TFrmPrincipal
             XValues.Order = loAscending
             YValues.Name = 'Y'
             YValues.Order = loNone
+            Left = 912
+            Top = 152
           end
           object Series2: TLineSeries
             Marks.Callout.Brush.Color = clBlack
@@ -1427,6 +1430,8 @@ object FrmPrincipal: TFrmPrincipal
             XValues.Order = loAscending
             YValues.Name = 'Y'
             YValues.Order = loNone
+            Left = 920
+            Top = 72
           end
         end
       end
@@ -1448,7 +1453,7 @@ object FrmPrincipal: TFrmPrincipal
           LeftAxis.MaximumOffset = 40
           LeftAxis.MinimumOffset = 20
           LeftAxis.Title.Caption = 'Usu'#225'rios'
-          MaxPointsPerPage = 200
+          MaxPointsPerPage = 10000
           View3DOptions.Elevation = 350
           View3DOptions.FontZoom = 70
           View3DOptions.Zoom = 97
@@ -1474,6 +1479,39 @@ object FrmPrincipal: TFrmPrincipal
             XValues.Order = loAscending
             YValues.Name = 'Y'
             YValues.Order = loNone
+            Left = 888
+            Top = 72
+          end
+        end
+      end
+      object ts1: TTabSheet
+        Caption = 'ts1'
+        ImageIndex = 4
+        object cxGrid1: TcxGrid
+          Left = 0
+          Top = 0
+          Width = 960
+          Height = 393
+          Align = alClient
+          TabOrder = 0
+          ExplicitLeft = 127
+          ExplicitTop = 48
+          ExplicitWidth = 250
+          ExplicitHeight = 200
+          object TvChart: TcxGridChartView
+            DiagramArea.Enabled = False
+            DiagramBar.Enabled = False
+            DiagramColumn.Enabled = False
+            DiagramLine.Active = True
+            object Serie1: TcxGridChartSeries
+            end
+            object Serie2: TcxGridChartSeries
+            end
+            object Serie3: TcxGridChartSeries
+            end
+          end
+          object cxGrid1Level1: TcxGridLevel
+            GridView = TvChart
           end
         end
       end

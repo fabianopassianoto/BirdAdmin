@@ -6,10 +6,10 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ExtCtrls, Grids, DBGrids, ComCtrls, StdCtrls, Buttons, DB,
   ZAbstractRODataset, ZAbstractDataset, ZDataset, ZAbstractConnection,
-  ZConnection, Spin, DrLabel, cxStyles, cxCustomData, cxGraphics, cxFilter,
-  cxData, cxDataStorage, cxEdit, cxDBData, cxGridLevel, cxClasses, cxControls,
-  cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
-  cxGrid, DBCtrls, TeeProcs, TeEngine, Chart, Series, cxGridChartView;
+  ZConnection, Spin, DrLabel, DBCtrls, TeeProcs, TeEngine, Chart, Series, cxGridChartView,
+  cxStyles, cxCustomData, cxGraphics, cxFilter, cxData, cxDataStorage, cxEdit,
+  cxDBData, cxGridLevel, cxGridCustomTableView, cxGridTableView,
+  cxGridDBTableView, cxClasses, cxControls, cxGridCustomView, cxGrid;
 
 type
   TFrmPrincipal = class(TForm)
@@ -120,12 +120,6 @@ type
     SerieUsuario: TLineSeries;
     QryTopUSUARIOS: TLargeintField;
     drloperacao: TDRLabel;
-    ts1: TTabSheet;
-    cxGrid1Level1: TcxGridLevel;
-    cxGrid1: TcxGrid;
-    TvChart: TcxGridChartView;
-    Serie1: TcxGridChartSeries;
-    Serie2: TcxGridChartSeries;
     procedure BtnConectarClick(Sender: TObject);
     procedure TimerTimer(Sender: TObject);
     procedure BtnSairClick(Sender: TObject);
@@ -172,8 +166,9 @@ begin
    Series2.AddY(StrToCurrDef(QryTopMINTOP.AsString,0),FormatDateTime('hh:nn:ss', Now),clGreen);
    SerieUsuario.AddY(StrToCurrDef(QryTopUSUARIOS.AsString,0),FormatDateTime('hh:nn:ss', Now),clGreen);
 
-   Serie1.AddValue(StrToCurrDef(QryTopMAXTOP.AsString,0));
-   Serie2.AddValue(StrToCurrDef(QryTopMINTOP.AsString,0));
+//   Serie1.AddValue(QryTopMAXTOP.AsInteger);
+//   Serie2.AddValue(QryTopMINTOP.AsInteger);
+//   Serie3.AddValue(QryTopMAXTOP.AsInteger);
 
 end;
 
